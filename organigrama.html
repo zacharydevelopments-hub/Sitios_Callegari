@@ -48,6 +48,13 @@ tr:last-child td{border-bottom:0}
 td a.mail{display:block;font-size:.78rem;color:var(--muted);text-decoration:none;overflow-wrap:anywhere}
 td a.mail:hover{color:var(--red)}
 .void{color:var(--muted)}
+h2{font-family:Fredoka,"Trebuchet MS",sans-serif;font-weight:500;font-size:1.25rem;margin:40px 0 14px;color:var(--muted)}
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.person{display:flex;flex-direction:column;gap:5px;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:16px}
+.person .role{font-size:.78rem;color:var(--green)}
+.person .pname{font-family:Fredoka,sans-serif;font-weight:500;font-size:1.05rem}
+.person a{font-size:.85rem;color:var(--muted);text-decoration:none;overflow-wrap:anywhere}
+.person a:hover{color:var(--red)}
 @media (prefers-reduced-motion:reduce){.chev{transition:none}}
 </style>
 </head>
@@ -175,9 +182,15 @@ td a.mail:hover{color:var(--red)}
             <tbody>
         <tr>
           <td class="col-suc">La Serena</td>
-          <td class="col-marca">Jeep - Fiat - Ram / KGM / MMC / JMC / Chery / BYD</td>
+          <td class="col-marca">Jeep - Fiat - Ram / KGM / JMC / Chery / BYD</td>
           <td>Carolina Zepeda<a class="mail" href="mailto:czepeda@callegari.cl" aria-label="Correo de Carolina Zepeda">czepeda@callegari.cl</a></td>
           <td><span class="void">—</span></td>
+        </tr>
+        <tr>
+          <td class="col-suc">La Serena</td>
+          <td class="col-marca">MMC</td>
+          <td>Carolina Zepeda<a class="mail" href="mailto:czepeda@callegari.cl" aria-label="Correo de Carolina Zepeda">czepeda@callegari.cl</a></td>
+          <td>Marcos Velozo<a class="mail" href="mailto:jefeserviciomitsubishi@callegari.cl" aria-label="Correo de Marcos Velozo">jefeserviciomitsubishi@callegari.cl</a></td>
         </tr>
         <tr>
           <td class="col-suc">Copiapó</td>
@@ -338,6 +351,25 @@ td a.mail:hover{color:var(--red)}
           </table>
         </div>
       </div>
+  </div>
+
+  <h2>Personal de interés</h2>
+  <div class="people">
+    <div class="person">
+      <span class="role">Gerente General</span>
+      <span class="pname">Matías Schlack</span>
+      <a href="mailto:mschlack@callegari.cl">mschlack@callegari.cl</a>
+    </div>
+    <div class="person">
+      <span class="role">Gerente de Finanzas y Control de Gestión</span>
+      <span class="pname">Daniel Gallardo</span>
+      <a href="mailto:Administracion@callegari.cl">Administracion@callegari.cl</a>
+    </div>
+    <div class="person">
+      <span class="role">Gerente PostVenta</span>
+      <span class="pname">Claudio Sandoval</span>
+      <a href="mailto:csandoval@callegari.cl">csandoval@callegari.cl</a>
+    </div>
   </div>
 </main>
 <script>
