@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Organigrama comercial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f5f4;--card:#fff;--ink:#1c2321;--muted:#5b6662;--line:#dfe4e2;--red:#cc1f2a;--green:#0e8c45;--plate:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#131816;--card:#1c2320;--ink:#eef2f0;--muted:#9aa7a2;--line:#2c3632}}
+:root[data-theme="dark"]{--bg:#131816;--card:#1c2320;--ink:#eef2f0;--muted:#9aa7a2;--line:#2c3632}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5}
+main{max-width:920px;margin:0 auto;padding:32px 20px 64px}
+.back{display:inline-flex;align-items:center;gap:6px;color:var(--muted);text-decoration:none;font-size:.9rem;margin-bottom:22px}
+.back:hover{color:var(--red)}
+.back svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+h1{font-family:Fredoka,"Trebuchet MS","Segoe UI",sans-serif;font-weight:600;font-size:clamp(1.7rem,5vw,2.5rem);line-height:1.15;text-align:center;margin:0 0 8px;letter-spacing:-.01em}
+.sub{text-align:center;color:var(--muted);margin:0 0 30px;font-size:.98rem}
+.root{display:flex;justify-content:center;margin-bottom:4px}
+.root-box{background:var(--red);color:#fff;font-family:Fredoka,sans-serif;font-weight:500;font-size:1.05rem;padding:14px 26px;border-radius:16px;text-align:center}
+.stem{width:2px;height:24px;background:var(--line);margin:0 auto 4px}
+.tree-line{height:2px;background:var(--line);max-width:760px;margin:0 auto 24px}
+
+.mgrs{display:flex;flex-direction:column;gap:12px}
+.mgr{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.mgr-head{width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 18px;background:none;border:0;cursor:pointer;text-align:left;color:inherit;font:inherit}
+.mgr-head:focus-visible{outline:3px solid var(--green);outline-offset:-3px}
+.mgr-info{display:flex;flex-direction:column;gap:6px;min-width:0}
+.mgr-name{font-family:Fredoka,sans-serif;font-weight:500;font-size:1.1rem}
+.mgr-mail{font-size:.85rem;color:var(--muted);text-decoration:none;overflow-wrap:anywhere}
+.mgr-mail:hover{color:var(--red)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.chip{font-size:.75rem;color:var(--green);background:color-mix(in srgb, var(--green) 12%, transparent);padding:3px 9px;border-radius:999px}
+.chev{flex:none;width:12px;height:12px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);transition:transform .2s}
+.mgr-head[aria-expanded="true"] .chev{transform:rotate(-135deg)}
+.mgr-panel{border-top:1px solid var(--line);padding:6px 18px 18px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th{text-align:left;font-size:.75rem;color:var(--muted);font-weight:500;padding:10px 10px 8px;border-bottom:1px solid var(--line)}
+td{padding:10px 10px;border-bottom:1px solid var(--line);font-size:.9rem;vertical-align:top}
+tr:last-child td{border-bottom:0}
+.col-suc{font-weight:500;white-space:nowrap}
+.col-marca{color:var(--muted)}
+td a.mail{display:block;font-size:.78rem;color:var(--muted);text-decoration:none;overflow-wrap:anywhere}
+td a.mail:hover{color:var(--red)}
+.void{color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.chev{transition:none}}
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="index.html"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>Volver a páginas asociadas</a>
+  <h1>Organigrama comercial</h1>
+  <p class="sub">Gerentes por marca, con sus sucursales, jefes comerciales y jefes de servicio</p>
+
+  <div class="root"><span class="root-box">Gerencia Comercial Callegari</span></div>
+  <div class="stem" aria-hidden="true"></div>
+  <div class="tree-line" aria-hidden="true"></div>
+
+  <div class="mgrs">
+      <div class="mgr">
+        <button class="mgr-head" id="btn-0" aria-expanded="false" aria-controls="panel-0">
+          <span class="mgr-info">
+            <span class="mgr-name">María Cristina</span>
+            <a class="mgr-mail" href="mailto:mcresk@callegari.cl">mcresk@callegari.cl</a>
+            <span class="chips"><span class="chip">Nissan</span><span class="chip">Baic</span><span class="chip">Omoda &amp; Jaecoo</span><span class="chip">JAC</span><span class="chip">EB</span></span>
+          </span>
+          <span class="chev" aria-hidden="true"></span>
+        </button>
+        <div class="mgr-panel" id="panel-0" role="region" aria-labelledby="btn-0" hidden>
+          <table>
+            <thead>
+              <tr><th>Sucursal</th><th>Marca(s)</th><th>Jefe comercial</th><th>Jefe de servicio</th></tr>
+            </thead>
+            <tbody>
+        <tr>
+          <td class="col-suc">La Serena</td>
+          <td class="col-marca">Nissan - Baic / Omoda &amp; Jaecoo</td>
+          <td>Francisco Rojas<a class="mail" href="mailto:francisco.rojas@callegari.cl" aria-label="Correo de Francisco Rojas">francisco.rojas@callegari.cl</a></td>
+          <td>Hilario Velasquez<a class="mail" href="mailto:jefedeservicionissanls@callegari.cl" aria-label="Correo de Hilario Velasquez">jefedeservicionissanls@callegari.cl</a></td>
+        </tr>
+        <tr>
+          <td class="col-suc">Ovalle</td>
+          <td class="col-marca">Nissan - Omoda &amp; Jaecoo</td>
+          <td>María Cristina<a class="mail" href="mailto:mcresk@callegari.cl" aria-label="Correo de María Cristina">mcresk@callegari.cl</a></td>
+          <td>Cristian Aranda<a class="mail" href="mailto:jefeservicioovalle@callegari.cl" aria-label="Correo de Cristian Aranda">jefeservicioovalle@callegari.cl</a></td>
+        </tr>
+        <tr>
+          <td class="col-suc">Copiapó</td>
+          <td class="col-marca">Nissan - Omoda &amp; Jaecoo / JAC - EB</td>
+          <td>Claudia Ponce<a class="mail" href="mailto:cponce@callegari.cl" aria-label="Correo de Claudia Ponce">cponce@callegari.cl</a></td>
+          <td>Danny Cobs<a class="mail" href="mailto:jefeserviciomultimarca@callegari.cl" aria-label="Correo de Danny Cobs">jefeserviciomultimarca@callegari.cl</a></td>
+        </tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="mgr">
+        <button class="mgr-head" id="btn-1" aria-expanded="false" aria-controls="panel-1">
+          <span class="mgr-info">
+            <span class="mgr-name">Jorge de la Jara</span>
+            <a class="mgr-mail" href="mailto:jdelajara@callegari.cl">jdelajara@callegari.cl</a>
+            <span class="chips"><span class="chip">Ford</span><span class="chip">Subaru</span><span class="chip">DFSK</span><span class="chip">Kia</span></span>
+          </span>
+          <span class="chev" aria-hidden="true"></span>
+        </button>
+        <div class="mgr-panel" id="panel-1" role="region" aria-labelledby="btn-1" hidden>
+          <table>
+            <thead>
+              <tr><th>Sucursal</th><th>Marca(s)</th><th>Jefe comercial</th><th>Jefe de servicio</th></tr>
+            </thead>
+            <tbody>
+        <tr>
+          <td class="col-suc">La Serena</td>
+          <td class="col-marca">Ford</td>
+          <td>Jorge de la Jara<a class="mail" href="mailto:jdelajara@callegari.cl" aria-label="Correo de Jorge de la Jara">jdelajara@callegari.cl</a></td>
+          <td>Hilario Velasquez<a class="mail" href="mailto:jefedeserviciomega@callegari.cl" aria-label="Correo de Hilario Velasquez">jefedeserviciomega@callegari.cl</a></td>
+        </tr>
+        <tr>
+          <td class="col-suc">La Serena</td>
+          <td class="col-marca">Subaru - DFSK</td>
+          <td><span class="void">—</span></td>
+          <td>Hilario Velasquez<a class="mail" href="mailto:jefedeserviciomega@callegari.cl" aria-label="Correo de Hilario Velasquez">jefedeserviciomega@callegari.cl</a></td>
+        </tr>
+        <tr>
+          <td class="col-suc">La Serena</td>
+          <td class="col-marca">Kia</td>
+          <td>Macarena de la Fuente<a class="mail" href="mailto:mdelafuente@callegari.cl" aria-label="Correo de Macarena de la Fuente">mdelafuente@callegari.cl</a></td>
+          <td>Hilario Velasquez<a class="mail" href="mailto:jefedeserviciomega@callegari.cl" aria-label="Correo de Hilario Velasquez">jefedeserviciomega@callegari.cl</a></td>
+        </tr>
+        <tr>
+          <td class="col-suc">Copiapó</td>
+          <td class="col-marca">Ford / Kia / Subaru - DFSK</td>
+          <td>María Cristina<a class="mail" href="mailto:mcresk@callegari.cl" aria-label="Correo de María Cristina">mcresk@callegari.cl</a></td>
+          <td>Raul Pinto<a class="mail" href="mailto:jefeserviciomegacppo@callegari.cl" aria-label="Correo de Raul Pinto">jefeserviciomegacppo@callegari.cl</a></td>
+        </tr>
+        <tr>
+          <td class="col-suc">Ovalle</td>
+          <td class="col-marca">Ford / Kia / Subaru - DFSK</td>
+          <td>Roxanna Cortes<a class="mail" href="mailto:rcortes@callegari.cl" aria-label="Correo de Roxanna Cortes">rcortes@callegari.cl</a></td>
+          <td>Cristian Aranda<a class="mail" href="mailto:jefeservicioovalle@callegari.cl" aria-label="Correo de Cristian Aranda">jefeservicioovalle@callegari.cl</a></td>
+        </tr>
+        <tr>
+          <td class="col-suc">Salamanca</td>
+          <td class="col-marca">Multimarca</td>
+          <td><span class="void">—</span></td>
+          <td>No aplica</td>
+        </tr>
+        <tr>
+          <td class="col-suc">Vallenar</td>
+          <td class="col-marca">Multimarca</td>
+          <td>Janette Calderon<a class="mail" href="mailto:jcalderon@callegari.cl" aria-label="Correo de Janette Calderon">jcalderon@callegari.cl</a></td>
+          <td>No aplica</td>
+        </tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="mgr">
+        <button class="mgr-head" id="btn-2" aria-expanded="false" aria-controls="panel-2">
+          <span class="mgr-info">
+            <span class="mgr-name">Raul Muñoz</span>
+            <a class="mgr-mail" href="mailto:rmunoz@callegari.cl">rmunoz@callegari.cl</a>
+            <span class="chips"><span class="chip">Jeep</span><span class="chip">Fiat</span><span class="chip">Ram</span><span class="chip">KGM</span><span class="chip">MMC</span><span class="chip">JMC</span><span class="chip">Chery</span><span class="chip">BYD</span></span>
+          </span>
+          <span class="chev" aria-hidden="true"></span>
+        </button>
+        <div class="mgr-panel" id="panel-2" role="region" aria-labelledby="btn-2" hidden>
+          <table>
+            <thead>
+              <tr><th>Sucursal</th><th>Marca(s)</th><th>Jefe comercial</th><th>Jefe de servicio</th></tr>
+            </thead>
+            <tbody>
+        <tr>
+          <td class="col-suc">La Serena</td>
+          <td class="col-marca">Jeep - Fiat - Ram / KGM / MMC / JMC / Chery / BYD</td>
+          <td>Carolina Zepeda<a class="mail" href="mailto:czepeda@callegari.cl" aria-label="Correo de Carolina Zepeda">czepeda@callegari.cl</a></td>
+          <td><span class="void">—</span></td>
+        </tr>
+        <tr>
+          <td class="col-suc">Copiapó</td>
+          <td class="col-marca">Chery - GAC - BYD / JMC - KGM - BYD / MMC / Fiat - Jeep - Ram</td>
+          <td>Elizabeth Guerrero<a class="mail" href="mailto:eguerrero@callegari.cl" aria-label="Correo de Elizabeth Guerrero">eguerrero@callegari.cl</a></td>
+          <td>Sebastian Aguirre<a class="mail" href="mailto:jefedeservicioastaracppo@callegari.cl" aria-label="Correo de Sebastian Aguirre">jefedeservicioastaracppo@callegari.cl</a></td>
+        </tr>
+        <tr>
+          <td class="col-suc">Ovalle</td>
+          <td class="col-marca">MMC - Chery - KGM</td>
+          <td>Roxanna Cortes<a class="mail" href="mailto:rcortes@callegari.cl" aria-label="Correo de Roxanna Cortes">rcortes@callegari.cl</a></td>
+          <td>Cristian Aranda<a class="mail" href="mailto:jefeservicioovalle@callegari.cl" aria-label="Correo de Cristian Aranda">jefeservicioovalle@callegari.cl</a></td>
+        </tr>
+        <tr>
+          <td class="col-suc">Salamanca</td>
+          <td class="col-marca">Multimarca</td>
+          <td><span class="void">—</span></td>
+          <td>No aplica</td>
+        </tr>
+        <tr>
+          <td class="col-suc">Vallenar</td>
+          <td class="col-marca">Multimarca</td>
+          <td>Janette Calderon<a class="mail" href="mailto:jcalderon@callegari.cl" aria-label="Correo de Janette Calderon">jcalderon@callegari.cl</a></td>
+          <td>No aplica</td>
+        </tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="mgr">
+        <button class="mgr-head" id="btn-3" aria-expanded="false" aria-controls="panel-3">
+          <span class="mgr-info">
+            <span class="mgr-name">Tomás Leniz</span>
+            <a class="mgr-mail" href="mailto:tleniz@callegari.cl">tleniz@callegari.cl</a>
+            <span class="chips"><span class="chip">Peugeot</span><span class="chip">Opel</span><span class="chip">Leapmotor</span><span class="chip">Citroën</span></span>
+          </span>
+          <span class="chev" aria-hidden="true"></span>
+        </button>
+        <div class="mgr-panel" id="panel-3" role="region" aria-labelledby="btn-3" hidden>
+          <table>
+            <thead>
+              <tr><th>Sucursal</th><th>Marca(s)</th><th>Jefe comercial</th><th>Jefe de servicio</th></tr>
+            </thead>
+            <tbody>
+        <tr>
+          <td class="col-suc">La Serena</td>
+          <td class="col-marca">Peugeot - Opel - Leap / Citroën - Opel - Leap</td>
+          <td>Tomás Leniz<a class="mail" href="mailto:tleniz@callegari.cl" aria-label="Correo de Tomás Leniz">tleniz@callegari.cl</a></td>
+          <td>Vladimir Tapia<a class="mail" href="mailto:vtapia@callegari.cl" aria-label="Correo de Vladimir Tapia">vtapia@callegari.cl</a></td>
+        </tr>
+        <tr>
+          <td class="col-suc">Copiapó</td>
+          <td class="col-marca">Peugeot - Citroën</td>
+          <td>Tomás Leniz<a class="mail" href="mailto:tleniz@callegari.cl" aria-label="Correo de Tomás Leniz">tleniz@callegari.cl</a></td>
+          <td>Raul Pinto<a class="mail" href="mailto:jefeserviciomegacppo@callegari.cl" aria-label="Correo de Raul Pinto">jefeserviciomegacppo@callegari.cl</a></td>
+        </tr>
+        <tr>
+          <td class="col-suc">Ovalle</td>
+          <td class="col-marca">Peugeot</td>
+          <td>Roxana Cortes<a class="mail" href="mailto:rcortes@callegari.cl" aria-label="Correo de Roxana Cortes">rcortes@callegari.cl</a></td>
+          <td>Cristian Aranda<a class="mail" href="mailto:jefeservicioovalle@callegari.cl" aria-label="Correo de Cristian Aranda">jefeservicioovalle@callegari.cl</a></td>
+        </tr>
+        <tr>
+          <td class="col-suc">Vallenar</td>
+          <td class="col-marca">Multimarca</td>
+          <td>Janette Calderon<a class="mail" href="mailto:jcalderon@callegari.cl" aria-label="Correo de Janette Calderon">jcalderon@callegari.cl</a></td>
+          <td>No aplica</td>
+        </tr>
+        <tr>
+          <td class="col-suc">Salamanca</td>
+          <td class="col-marca">Multimarca</td>
+          <td>Tomás Leniz<a class="mail" href="mailto:tleniz@callegari.cl" aria-label="Correo de Tomás Leniz">tleniz@callegari.cl</a></td>
+          <td>No aplica</td>
+        </tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="mgr">
+        <button class="mgr-head" id="btn-4" aria-expanded="false" aria-controls="panel-4">
+          <span class="mgr-info">
+            <span class="mgr-name">Lorena León</span>
+            <a class="mgr-mail" href="mailto:lleon@callegari.cl">lleon@callegari.cl</a>
+            <span class="chips"><span class="chip">Usados</span><span class="chip">Premium Car Sales</span></span>
+          </span>
+          <span class="chev" aria-hidden="true"></span>
+        </button>
+        <div class="mgr-panel" id="panel-4" role="region" aria-labelledby="btn-4" hidden>
+          <table>
+            <thead>
+              <tr><th>Sucursal</th><th>Marca(s)</th><th>Jefe comercial</th><th>Jefe de servicio</th></tr>
+            </thead>
+            <tbody>
+        <tr>
+          <td class="col-suc">La Serena</td>
+          <td class="col-marca">Usados / Premium Car Sales</td>
+          <td>Francisco Rojas<a class="mail" href="mailto:francisco.rojas@callegari.cl" aria-label="Correo de Francisco Rojas">francisco.rojas@callegari.cl</a></td>
+          <td><span class="void">—</span></td>
+        </tr>
+        <tr>
+          <td class="col-suc">Copiapó</td>
+          <td class="col-marca">Usados</td>
+          <td>Claudia Ponce<a class="mail" href="mailto:cponce@callegari.cl" aria-label="Correo de Claudia Ponce">cponce@callegari.cl</a></td>
+          <td><span class="void">—</span></td>
+        </tr>
+        <tr>
+          <td class="col-suc">Ovalle</td>
+          <td class="col-marca">Usados</td>
+          <td>Roxana Cortes<a class="mail" href="mailto:rcortes@callegari.cl" aria-label="Correo de Roxana Cortes">rcortes@callegari.cl</a></td>
+          <td><span class="void">—</span></td>
+        </tr>
+        <tr>
+          <td class="col-suc">Vallenar</td>
+          <td class="col-marca">Usados</td>
+          <td>Janette Calderon<a class="mail" href="mailto:jcalderon@callegari.cl" aria-label="Correo de Janette Calderon">jcalderon@callegari.cl</a></td>
+          <td><span class="void">—</span></td>
+        </tr>
+        <tr>
+          <td class="col-suc">Salamanca</td>
+          <td class="col-marca">Usados</td>
+          <td><span class="void">—</span></td>
+          <td><span class="void">—</span></td>
+        </tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="mgr">
+        <button class="mgr-head" id="btn-5" aria-expanded="false" aria-controls="panel-5">
+          <span class="mgr-info">
+            <span class="mgr-name">Johan Cortés</span>
+            <a class="mgr-mail" href="mailto:jcortes@callegari.cl">jcortes@callegari.cl</a>
+            <span class="chips"><span class="chip">Camiones</span><span class="chip">Buses</span><span class="chip">Ford PRO</span></span>
+          </span>
+          <span class="chev" aria-hidden="true"></span>
+        </button>
+        <div class="mgr-panel" id="panel-5" role="region" aria-labelledby="btn-5" hidden>
+          <table>
+            <thead>
+              <tr><th>Sucursal</th><th>Marca(s)</th><th>Jefe comercial</th><th>Jefe de servicio</th></tr>
+            </thead>
+            <tbody>
+        <tr>
+          <td class="col-suc">La Serena</td>
+          <td class="col-marca">Camiones y buses / Ford PRO (3ª y 4ª región) / Mercado público / Flota Stellantis</td>
+          <td>Cristian Leon<a class="mail" href="mailto:cleon@callegari.cl" aria-label="Correo de Cristian Leon">cleon@callegari.cl</a></td>
+          <td>Marcelo Ruiz<a class="mail" href="mailto:servicio.camiones@callegari.cl" aria-label="Correo de Marcelo Ruiz">servicio.camiones@callegari.cl</a></td>
+        </tr>
+        <tr>
+          <td class="col-suc">Copiapó</td>
+          <td class="col-marca">Camiones y buses</td>
+          <td>No aplica</td>
+          <td>Raul Pinto<a class="mail" href="mailto:jefeserviciomegacppo@callegari.cl" aria-label="Correo de Raul Pinto">jefeserviciomegacppo@callegari.cl</a></td>
+        </tr>
+        <tr>
+          <td class="col-suc">Ovalle</td>
+          <td class="col-marca">Camiones</td>
+          <td>Roxana Cortés<a class="mail" href="mailto:rcortes@callegari.cl" aria-label="Correo de Roxana Cortés">rcortes@callegari.cl</a></td>
+          <td><span class="void">—</span></td>
+        </tr></tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+</main>
+<script>
+document.querySelectorAll('.mgr-head').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var panel = document.getElementById(btn.getAttribute('aria-controls'));
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    if (open) { panel.setAttribute('hidden',''); } else { panel.removeAttribute('hidden'); }
+  });
+});
+</script>
+</body>
+</html>
