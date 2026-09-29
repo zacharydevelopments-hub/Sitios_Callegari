@@ -32,8 +32,8 @@ h1{font-family:Fredoka,"Trebuchet MS","Segoe UI",sans-serif;font-weight:600;font
 .mgr-head:focus-visible{outline:3px solid var(--green);outline-offset:-3px}
 .mgr-info{display:flex;flex-direction:column;gap:6px;min-width:0}
 .mgr-name{font-family:Fredoka,sans-serif;font-weight:500;font-size:1.1rem}
-.mgr-name{text-decoration:none;color:inherit;display:inline-block}
-.mgr-name:hover{color:var(--red)}
+.mgr-mail{font-size:.85rem;color:var(--muted);text-decoration:none;overflow-wrap:anywhere}
+.mgr-mail:hover{color:var(--red)}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
 .chip{font-size:.75rem;color:var(--green);background:color-mix(in srgb, var(--green) 12%, transparent);padding:3px 9px;border-radius:999px}
 .chev{flex:none;width:12px;height:12px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);transition:transform .2s}
@@ -53,8 +53,8 @@ h2{font-family:Fredoka,"Trebuchet MS",sans-serif;font-weight:500;font-size:1.25r
 .person{display:flex;flex-direction:column;gap:5px;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:16px}
 .person .role{font-size:.78rem;color:var(--green)}
 .person .pname{font-family:Fredoka,sans-serif;font-weight:500;font-size:1.05rem}
-.person a.pname{text-decoration:none;color:inherit}
-.person a.pname:hover{color:var(--red)}
+.person a{font-size:.85rem;color:var(--muted);text-decoration:none;overflow-wrap:anywhere}
+.person a:hover{color:var(--red)}
 @media (prefers-reduced-motion:reduce){.chev{transition:none}}
 </style>
 </head>
@@ -72,7 +72,8 @@ h2{font-family:Fredoka,"Trebuchet MS",sans-serif;font-weight:500;font-size:1.25r
       <div class="mgr">
         <button class="mgr-head" id="btn-0" aria-expanded="false" aria-controls="panel-0">
           <span class="mgr-info">
-            <a class="mgr-name mgr-mail" href="mailto:mcresk@callegari.cl">María Cristina</a>
+            <span class="mgr-name">María Cristina</span>
+            <a class="mgr-mail" href="mailto:mcresk@callegari.cl">mcresk@callegari.cl</a>
             <span class="chips"><span class="chip">Nissan</span><span class="chip">Baic</span><span class="chip">Omoda &amp; Jaecoo</span><span class="chip">JAC</span><span class="chip">EB</span></span>
           </span>
           <span class="chev" aria-hidden="true"></span>
@@ -86,20 +87,20 @@ h2{font-family:Fredoka,"Trebuchet MS",sans-serif;font-weight:500;font-size:1.25r
         <tr>
           <td class="col-suc">La Serena</td>
           <td class="col-marca">Nissan - Baic / Omoda &amp; Jaecoo</td>
-          <td><a class="mail" href="mailto:francisco.rojas@callegari.cl" aria-label="Correo de Francisco Rojas">Francisco Rojas</a></td>
-          <td><a class="mail" href="mailto:jefedeservicionissanls@callegari.cl" aria-label="Correo de Hilario Velasquez">Hilario Velasquez</a></td>
+          <td>Francisco Rojas<a class="mail" href="mailto:francisco.rojas@callegari.cl" aria-label="Correo de Francisco Rojas">francisco.rojas@callegari.cl</a></td>
+          <td>Hilario Velasquez<a class="mail" href="mailto:jefedeservicionissanls@callegari.cl" aria-label="Correo de Hilario Velasquez">jefedeservicionissanls@callegari.cl</a></td>
         </tr>
         <tr>
           <td class="col-suc">Ovalle</td>
           <td class="col-marca">Nissan - Omoda &amp; Jaecoo</td>
-          <td><a class="mail" href="mailto:mcresk@callegari.cl" aria-label="Correo de María Cristina">María Cristina</a></td>
-          <td><a class="mail" href="mailto:jefeservicioovalle@callegari.cl" aria-label="Correo de Cristian Aranda">Cristian Aranda</a></td>
+          <td>María Cristina<a class="mail" href="mailto:mcresk@callegari.cl" aria-label="Correo de María Cristina">mcresk@callegari.cl</a></td>
+          <td>Cristian Aranda<a class="mail" href="mailto:jefeservicioovalle@callegari.cl" aria-label="Correo de Cristian Aranda">jefeservicioovalle@callegari.cl</a></td>
         </tr>
         <tr>
           <td class="col-suc">Copiapó</td>
           <td class="col-marca">Nissan - Omoda &amp; Jaecoo / JAC - EB</td>
-          <td><a class="mail" href="mailto:cponce@callegari.cl" aria-label="Correo de Claudia Ponce">Claudia Ponce</a></td>
-          <td><a class="mail" href="mailto:jefeserviciomultimarca@callegari.cl" aria-label="Correo de Danny Cobs">Danny Cobs</a></td>
+          <td>Claudia Ponce<a class="mail" href="mailto:cponce@callegari.cl" aria-label="Correo de Claudia Ponce">cponce@callegari.cl</a></td>
+          <td>Danny Cobs<a class="mail" href="mailto:jefeserviciomultimarca@callegari.cl" aria-label="Correo de Danny Cobs">jefeserviciomultimarca@callegari.cl</a></td>
         </tr></tbody>
           </table>
         </div>
@@ -107,7 +108,8 @@ h2{font-family:Fredoka,"Trebuchet MS",sans-serif;font-weight:500;font-size:1.25r
       <div class="mgr">
         <button class="mgr-head" id="btn-1" aria-expanded="false" aria-controls="panel-1">
           <span class="mgr-info">
-            <a class="mgr-name mgr-mail" href="mailto:jdelajara@callegari.cl">Jorge de la Jara</a>
+            <span class="mgr-name">Jorge de la Jara</span>
+            <a class="mgr-mail" href="mailto:jdelajara@callegari.cl">jdelajara@callegari.cl</a>
             <span class="chips"><span class="chip">Ford</span><span class="chip">Subaru</span><span class="chip">DFSK</span><span class="chip">Kia</span></span>
           </span>
           <span class="chev" aria-hidden="true"></span>
@@ -121,32 +123,32 @@ h2{font-family:Fredoka,"Trebuchet MS",sans-serif;font-weight:500;font-size:1.25r
         <tr>
           <td class="col-suc">La Serena</td>
           <td class="col-marca">Ford</td>
-          <td><a class="mail" href="mailto:jdelajara@callegari.cl" aria-label="Correo de Jorge de la Jara">Jorge de la Jara</a></td>
-          <td><a class="mail" href="mailto:jefedeserviciomega@callegari.cl" aria-label="Correo de Hilario Velasquez">Hilario Velasquez</a></td>
+          <td>Jorge de la Jara<a class="mail" href="mailto:jdelajara@callegari.cl" aria-label="Correo de Jorge de la Jara">jdelajara@callegari.cl</a></td>
+          <td>Hilario Velasquez<a class="mail" href="mailto:jefedeserviciomega@callegari.cl" aria-label="Correo de Hilario Velasquez">jefedeserviciomega@callegari.cl</a></td>
         </tr>
         <tr>
           <td class="col-suc">La Serena</td>
           <td class="col-marca">Subaru - DFSK</td>
           <td><span class="void">—</span></td>
-          <td><a class="mail" href="mailto:jefedeserviciomega@callegari.cl" aria-label="Correo de Hilario Velasquez">Hilario Velasquez</a></td>
+          <td>Hilario Velasquez<a class="mail" href="mailto:jefedeserviciomega@callegari.cl" aria-label="Correo de Hilario Velasquez">jefedeserviciomega@callegari.cl</a></td>
         </tr>
         <tr>
           <td class="col-suc">La Serena</td>
           <td class="col-marca">Kia</td>
-          <td><a class="mail" href="mailto:mdelafuente@callegari.cl" aria-label="Correo de Macarena de la Fuente">Macarena de la Fuente</a></td>
-          <td><a class="mail" href="mailto:jefedeserviciomega@callegari.cl" aria-label="Correo de Hilario Velasquez">Hilario Velasquez</a></td>
+          <td>Macarena de la Fuente<a class="mail" href="mailto:mdelafuente@callegari.cl" aria-label="Correo de Macarena de la Fuente">mdelafuente@callegari.cl</a></td>
+          <td>Hilario Velasquez<a class="mail" href="mailto:jefedeserviciomega@callegari.cl" aria-label="Correo de Hilario Velasquez">jefedeserviciomega@callegari.cl</a></td>
         </tr>
         <tr>
           <td class="col-suc">Copiapó</td>
           <td class="col-marca">Ford / Kia / Subaru - DFSK</td>
-          <td><a class="mail" href="mailto:mcresk@callegari.cl" aria-label="Correo de María Cristina">María Cristina</a></td>
-          <td><a class="mail" href="mailto:jefeserviciomegacppo@callegari.cl" aria-label="Correo de Raul Pinto">Raul Pinto</a></td>
+          <td>María Cristina<a class="mail" href="mailto:mcresk@callegari.cl" aria-label="Correo de María Cristina">mcresk@callegari.cl</a></td>
+          <td>Raul Pinto<a class="mail" href="mailto:jefeserviciomegacppo@callegari.cl" aria-label="Correo de Raul Pinto">jefeserviciomegacppo@callegari.cl</a></td>
         </tr>
         <tr>
           <td class="col-suc">Ovalle</td>
           <td class="col-marca">Ford / Kia / Subaru - DFSK</td>
-          <td><a class="mail" href="mailto:rcortes@callegari.cl" aria-label="Correo de Roxanna Cortes">Roxanna Cortes</a></td>
-          <td><a class="mail" href="mailto:jefeservicioovalle@callegari.cl" aria-label="Correo de Cristian Aranda">Cristian Aranda</a></td>
+          <td>Roxanna Cortes<a class="mail" href="mailto:rcortes@callegari.cl" aria-label="Correo de Roxanna Cortes">rcortes@callegari.cl</a></td>
+          <td>Cristian Aranda<a class="mail" href="mailto:jefeservicioovalle@callegari.cl" aria-label="Correo de Cristian Aranda">jefeservicioovalle@callegari.cl</a></td>
         </tr>
         <tr>
           <td class="col-suc">Salamanca</td>
@@ -157,7 +159,7 @@ h2{font-family:Fredoka,"Trebuchet MS",sans-serif;font-weight:500;font-size:1.25r
         <tr>
           <td class="col-suc">Vallenar</td>
           <td class="col-marca">Multimarca</td>
-          <td><a class="mail" href="mailto:jcalderon@callegari.cl" aria-label="Correo de Janette Calderon">Janette Calderon</a></td>
+          <td>Janette Calderon<a class="mail" href="mailto:jcalderon@callegari.cl" aria-label="Correo de Janette Calderon">jcalderon@callegari.cl</a></td>
           <td>No aplica</td>
         </tr></tbody>
           </table>
@@ -166,7 +168,8 @@ h2{font-family:Fredoka,"Trebuchet MS",sans-serif;font-weight:500;font-size:1.25r
       <div class="mgr">
         <button class="mgr-head" id="btn-2" aria-expanded="false" aria-controls="panel-2">
           <span class="mgr-info">
-            <a class="mgr-name mgr-mail" href="mailto:rmunoz@callegari.cl">Raul Muñoz</a>
+            <span class="mgr-name">Raul Muñoz</span>
+            <a class="mgr-mail" href="mailto:rmunoz@callegari.cl">rmunoz@callegari.cl</a>
             <span class="chips"><span class="chip">Jeep</span><span class="chip">Fiat</span><span class="chip">Ram</span><span class="chip">KGM</span><span class="chip">MMC</span><span class="chip">JMC</span><span class="chip">Chery</span><span class="chip">BYD</span></span>
           </span>
           <span class="chev" aria-hidden="true"></span>
@@ -180,26 +183,26 @@ h2{font-family:Fredoka,"Trebuchet MS",sans-serif;font-weight:500;font-size:1.25r
         <tr>
           <td class="col-suc">La Serena</td>
           <td class="col-marca">Jeep - Fiat - Ram / KGM / JMC / Chery / BYD</td>
-          <td><a class="mail" href="mailto:czepeda@callegari.cl" aria-label="Correo de Carolina Zepeda">Carolina Zepeda</a></td>
+          <td>Carolina Zepeda<a class="mail" href="mailto:czepeda@callegari.cl" aria-label="Correo de Carolina Zepeda">czepeda@callegari.cl</a></td>
           <td><span class="void">—</span></td>
         </tr>
         <tr>
           <td class="col-suc">La Serena</td>
           <td class="col-marca">MMC</td>
-          <td><a class="mail" href="mailto:czepeda@callegari.cl" aria-label="Correo de Carolina Zepeda">Carolina Zepeda</a></td>
-          <td><a class="mail" href="mailto:jefeserviciomitsubishi@callegari.cl" aria-label="Correo de Marcos Velozo">Marcos Velozo</a></td>
+          <td>Carolina Zepeda<a class="mail" href="mailto:czepeda@callegari.cl" aria-label="Correo de Carolina Zepeda">czepeda@callegari.cl</a></td>
+          <td>Marcos Velozo<a class="mail" href="mailto:jefeserviciomitsubishi@callegari.cl" aria-label="Correo de Marcos Velozo">jefeserviciomitsubishi@callegari.cl</a></td>
         </tr>
         <tr>
           <td class="col-suc">Copiapó</td>
           <td class="col-marca">Chery - GAC - BYD / JMC - KGM - BYD / MMC / Fiat - Jeep - Ram</td>
-          <td><a class="mail" href="mailto:eguerrero@callegari.cl" aria-label="Correo de Elizabeth Guerrero">Elizabeth Guerrero</a></td>
-          <td><a class="mail" href="mailto:jefedeservicioastaracppo@callegari.cl" aria-label="Correo de Sebastian Aguirre">Sebastian Aguirre</a></td>
+          <td>Elizabeth Guerrero<a class="mail" href="mailto:eguerrero@callegari.cl" aria-label="Correo de Elizabeth Guerrero">eguerrero@callegari.cl</a></td>
+          <td>Sebastian Aguirre<a class="mail" href="mailto:jefedeservicioastaracppo@callegari.cl" aria-label="Correo de Sebastian Aguirre">jefedeservicioastaracppo@callegari.cl</a></td>
         </tr>
         <tr>
           <td class="col-suc">Ovalle</td>
           <td class="col-marca">MMC - Chery - KGM</td>
-          <td><a class="mail" href="mailto:rcortes@callegari.cl" aria-label="Correo de Roxanna Cortes">Roxanna Cortes</a></td>
-          <td><a class="mail" href="mailto:jefeservicioovalle@callegari.cl" aria-label="Correo de Cristian Aranda">Cristian Aranda</a></td>
+          <td>Roxanna Cortes<a class="mail" href="mailto:rcortes@callegari.cl" aria-label="Correo de Roxanna Cortes">rcortes@callegari.cl</a></td>
+          <td>Cristian Aranda<a class="mail" href="mailto:jefeservicioovalle@callegari.cl" aria-label="Correo de Cristian Aranda">jefeservicioovalle@callegari.cl</a></td>
         </tr>
         <tr>
           <td class="col-suc">Salamanca</td>
@@ -210,7 +213,7 @@ h2{font-family:Fredoka,"Trebuchet MS",sans-serif;font-weight:500;font-size:1.25r
         <tr>
           <td class="col-suc">Vallenar</td>
           <td class="col-marca">Multimarca</td>
-          <td><a class="mail" href="mailto:jcalderon@callegari.cl" aria-label="Correo de Janette Calderon">Janette Calderon</a></td>
+          <td>Janette Calderon<a class="mail" href="mailto:jcalderon@callegari.cl" aria-label="Correo de Janette Calderon">jcalderon@callegari.cl</a></td>
           <td>No aplica</td>
         </tr></tbody>
           </table>
@@ -219,7 +222,8 @@ h2{font-family:Fredoka,"Trebuchet MS",sans-serif;font-weight:500;font-size:1.25r
       <div class="mgr">
         <button class="mgr-head" id="btn-3" aria-expanded="false" aria-controls="panel-3">
           <span class="mgr-info">
-            <a class="mgr-name mgr-mail" href="mailto:tleniz@callegari.cl">Tomás Leniz</a>
+            <span class="mgr-name">Tomás Leniz</span>
+            <a class="mgr-mail" href="mailto:tleniz@callegari.cl">tleniz@callegari.cl</a>
             <span class="chips"><span class="chip">Peugeot</span><span class="chip">Opel</span><span class="chip">Leapmotor</span><span class="chip">Citroën</span></span>
           </span>
           <span class="chev" aria-hidden="true"></span>
@@ -233,31 +237,31 @@ h2{font-family:Fredoka,"Trebuchet MS",sans-serif;font-weight:500;font-size:1.25r
         <tr>
           <td class="col-suc">La Serena</td>
           <td class="col-marca">Peugeot - Opel - Leap / Citroën - Opel - Leap</td>
-          <td><a class="mail" href="mailto:tleniz@callegari.cl" aria-label="Correo de Tomás Leniz">Tomás Leniz</a></td>
-          <td><a class="mail" href="mailto:vtapia@callegari.cl" aria-label="Correo de Vladimir Tapia">Vladimir Tapia</a></td>
+          <td>Tomás Leniz<a class="mail" href="mailto:tleniz@callegari.cl" aria-label="Correo de Tomás Leniz">tleniz@callegari.cl</a></td>
+          <td>Vladimir Tapia<a class="mail" href="mailto:vtapia@callegari.cl" aria-label="Correo de Vladimir Tapia">vtapia@callegari.cl</a></td>
         </tr>
         <tr>
           <td class="col-suc">Copiapó</td>
           <td class="col-marca">Peugeot - Citroën</td>
-          <td><a class="mail" href="mailto:tleniz@callegari.cl" aria-label="Correo de Tomás Leniz">Tomás Leniz</a></td>
-          <td><a class="mail" href="mailto:jefeserviciomegacppo@callegari.cl" aria-label="Correo de Raul Pinto">Raul Pinto</a></td>
+          <td>Tomás Leniz<a class="mail" href="mailto:tleniz@callegari.cl" aria-label="Correo de Tomás Leniz">tleniz@callegari.cl</a></td>
+          <td>Raul Pinto<a class="mail" href="mailto:jefeserviciomegacppo@callegari.cl" aria-label="Correo de Raul Pinto">jefeserviciomegacppo@callegari.cl</a></td>
         </tr>
         <tr>
           <td class="col-suc">Ovalle</td>
           <td class="col-marca">Peugeot</td>
-          <td><a class="mail" href="mailto:rcortes@callegari.cl" aria-label="Correo de Roxana Cortes">Roxana Cortes</a></td>
-          <td><a class="mail" href="mailto:jefeservicioovalle@callegari.cl" aria-label="Correo de Cristian Aranda">Cristian Aranda</a></td>
+          <td>Roxana Cortes<a class="mail" href="mailto:rcortes@callegari.cl" aria-label="Correo de Roxana Cortes">rcortes@callegari.cl</a></td>
+          <td>Cristian Aranda<a class="mail" href="mailto:jefeservicioovalle@callegari.cl" aria-label="Correo de Cristian Aranda">jefeservicioovalle@callegari.cl</a></td>
         </tr>
         <tr>
           <td class="col-suc">Vallenar</td>
           <td class="col-marca">Multimarca</td>
-          <td><a class="mail" href="mailto:jcalderon@callegari.cl" aria-label="Correo de Janette Calderon">Janette Calderon</a></td>
+          <td>Janette Calderon<a class="mail" href="mailto:jcalderon@callegari.cl" aria-label="Correo de Janette Calderon">jcalderon@callegari.cl</a></td>
           <td>No aplica</td>
         </tr>
         <tr>
           <td class="col-suc">Salamanca</td>
           <td class="col-marca">Multimarca</td>
-          <td><a class="mail" href="mailto:tleniz@callegari.cl" aria-label="Correo de Tomás Leniz">Tomás Leniz</a></td>
+          <td>Tomás Leniz<a class="mail" href="mailto:tleniz@callegari.cl" aria-label="Correo de Tomás Leniz">tleniz@callegari.cl</a></td>
           <td>No aplica</td>
         </tr></tbody>
           </table>
@@ -266,7 +270,8 @@ h2{font-family:Fredoka,"Trebuchet MS",sans-serif;font-weight:500;font-size:1.25r
       <div class="mgr">
         <button class="mgr-head" id="btn-4" aria-expanded="false" aria-controls="panel-4">
           <span class="mgr-info">
-            <a class="mgr-name mgr-mail" href="mailto:lleon@callegari.cl">Lorena León</a>
+            <span class="mgr-name">Lorena León</span>
+            <a class="mgr-mail" href="mailto:lleon@callegari.cl">lleon@callegari.cl</a>
             <span class="chips"><span class="chip">Usados</span><span class="chip">Premium Car Sales</span></span>
           </span>
           <span class="chev" aria-hidden="true"></span>
@@ -280,25 +285,25 @@ h2{font-family:Fredoka,"Trebuchet MS",sans-serif;font-weight:500;font-size:1.25r
         <tr>
           <td class="col-suc">La Serena</td>
           <td class="col-marca">Usados / Premium Car Sales</td>
-          <td><a class="mail" href="mailto:francisco.rojas@callegari.cl" aria-label="Correo de Francisco Rojas">Francisco Rojas</a></td>
+          <td>Francisco Rojas<a class="mail" href="mailto:francisco.rojas@callegari.cl" aria-label="Correo de Francisco Rojas">francisco.rojas@callegari.cl</a></td>
           <td><span class="void">—</span></td>
         </tr>
         <tr>
           <td class="col-suc">Copiapó</td>
           <td class="col-marca">Usados</td>
-          <td><a class="mail" href="mailto:cponce@callegari.cl" aria-label="Correo de Claudia Ponce">Claudia Ponce</a></td>
+          <td>Claudia Ponce<a class="mail" href="mailto:cponce@callegari.cl" aria-label="Correo de Claudia Ponce">cponce@callegari.cl</a></td>
           <td><span class="void">—</span></td>
         </tr>
         <tr>
           <td class="col-suc">Ovalle</td>
           <td class="col-marca">Usados</td>
-          <td><a class="mail" href="mailto:rcortes@callegari.cl" aria-label="Correo de Roxana Cortes">Roxana Cortes</a></td>
+          <td>Roxana Cortes<a class="mail" href="mailto:rcortes@callegari.cl" aria-label="Correo de Roxana Cortes">rcortes@callegari.cl</a></td>
           <td><span class="void">—</span></td>
         </tr>
         <tr>
           <td class="col-suc">Vallenar</td>
           <td class="col-marca">Usados</td>
-          <td><a class="mail" href="mailto:jcalderon@callegari.cl" aria-label="Correo de Janette Calderon">Janette Calderon</a></td>
+          <td>Janette Calderon<a class="mail" href="mailto:jcalderon@callegari.cl" aria-label="Correo de Janette Calderon">jcalderon@callegari.cl</a></td>
           <td><span class="void">—</span></td>
         </tr>
         <tr>
@@ -313,7 +318,8 @@ h2{font-family:Fredoka,"Trebuchet MS",sans-serif;font-weight:500;font-size:1.25r
       <div class="mgr">
         <button class="mgr-head" id="btn-5" aria-expanded="false" aria-controls="panel-5">
           <span class="mgr-info">
-            <a class="mgr-name mgr-mail" href="mailto:jcortes@callegari.cl">Johan Cortés</a>
+            <span class="mgr-name">Johan Cortés</span>
+            <a class="mgr-mail" href="mailto:jcortes@callegari.cl">jcortes@callegari.cl</a>
             <span class="chips"><span class="chip">Camiones</span><span class="chip">Buses</span><span class="chip">Ford PRO</span></span>
           </span>
           <span class="chev" aria-hidden="true"></span>
@@ -327,19 +333,19 @@ h2{font-family:Fredoka,"Trebuchet MS",sans-serif;font-weight:500;font-size:1.25r
         <tr>
           <td class="col-suc">La Serena</td>
           <td class="col-marca">Camiones y buses / Ford PRO (3ª y 4ª región) / Mercado público / Flota Stellantis</td>
-          <td><a class="mail" href="mailto:cleon@callegari.cl" aria-label="Correo de Cristian Leon">Cristian Leon</a></td>
-          <td><a class="mail" href="mailto:servicio.camiones@callegari.cl" aria-label="Correo de Marcelo Ruiz">Marcelo Ruiz</a></td>
+          <td>Cristian Leon<a class="mail" href="mailto:cleon@callegari.cl" aria-label="Correo de Cristian Leon">cleon@callegari.cl</a></td>
+          <td>Marcelo Ruiz<a class="mail" href="mailto:servicio.camiones@callegari.cl" aria-label="Correo de Marcelo Ruiz">servicio.camiones@callegari.cl</a></td>
         </tr>
         <tr>
           <td class="col-suc">Copiapó</td>
           <td class="col-marca">Camiones y buses</td>
           <td>No aplica</td>
-          <td><a class="mail" href="mailto:jefeserviciomegacppo@callegari.cl" aria-label="Correo de Raul Pinto">Raul Pinto</a></td>
+          <td>Raul Pinto<a class="mail" href="mailto:jefeserviciomegacppo@callegari.cl" aria-label="Correo de Raul Pinto">jefeserviciomegacppo@callegari.cl</a></td>
         </tr>
         <tr>
           <td class="col-suc">Ovalle</td>
           <td class="col-marca">Camiones</td>
-          <td><a class="mail" href="mailto:rcortes@callegari.cl" aria-label="Correo de Roxana Cortés">Roxana Cortés</a></td>
+          <td>Roxana Cortés<a class="mail" href="mailto:rcortes@callegari.cl" aria-label="Correo de Roxana Cortés">rcortes@callegari.cl</a></td>
           <td><span class="void">—</span></td>
         </tr></tbody>
           </table>
@@ -351,15 +357,18 @@ h2{font-family:Fredoka,"Trebuchet MS",sans-serif;font-weight:500;font-size:1.25r
   <div class="people">
     <div class="person">
       <span class="role">Gerente General</span>
-      <a class="pname" href="mailto:mschlack@callegari.cl">Matías Schlack</a>
+      <span class="pname">Matías Schlack</span>
+      <a href="mailto:mschlack@callegari.cl">mschlack@callegari.cl</a>
     </div>
     <div class="person">
       <span class="role">Gerente de Finanzas y Control de Gestión</span>
-      <a class="pname" href="mailto:Administracion@callegari.cl">Daniel Gallardo</a>
+      <span class="pname">Daniel Gallardo</span>
+      <a href="mailto:Administracion@callegari.cl">Administracion@callegari.cl</a>
     </div>
     <div class="person">
       <span class="role">Gerente PostVenta</span>
-      <a class="pname" href="mailto:csandoval@callegari.cl">Claudio Sandoval</a>
+      <span class="pname">Claudio Sandoval</span>
+      <a href="mailto:csandoval@callegari.cl">csandoval@callegari.cl</a>
     </div>
   </div>
 </main>
