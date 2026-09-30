@@ -34,14 +34,16 @@ a.card:focus-visible{outline:3px solid var(--green);outline-offset:2px}
 .txt{min-width:0}
 .name{display:block;font-family:Fredoka,"Trebuchet MS",sans-serif;font-weight:500;font-size:1.15rem;line-height:1.2}
 .host{display:block;font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
-details.drop{background:transparent}
-summary.card{list-style:none;cursor:pointer;position:relative}
-summary.card::-webkit-details-marker{display:none}
-summary.card::marker{content:''}
-.chev{flex:none;width:10px;height:10px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);transition:transform .2s;margin-left:auto}
-details[open] summary .chev{transform:rotate(-135deg)}
-.drop-list{display:flex;flex-direction:column;gap:8px;margin-top:10px}
-.drop-list a{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:var(--card);border:1px solid var(--line);border-radius:14px;color:inherit;text-decoration:none;transition:border-color .15s}
+button.card{border:1px solid var(--line);font:inherit;width:100%}
+dialog.modal{border:0;border-radius:20px;padding:22px;max-width:420px;width:calc(100% - 40px);background:var(--card);color:var(--ink);box-shadow:0 12px 40px rgba(0,0,0,.2)}
+dialog.modal::backdrop{background:rgba(15,18,17,.55)}
+.modal-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.modal-title{font-family:Fredoka,"Trebuchet MS",sans-serif;font-weight:600;font-size:1.2rem}
+.modal-close{flex:none;background:none;border:0;font-size:1.6rem;line-height:1;color:var(--muted);cursor:pointer;padding:2px 6px;border-radius:8px}
+.modal-close:hover{color:var(--red)}
+.modal-close:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+.drop-list{display:flex;flex-direction:column;gap:8px}
+.drop-list a{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:var(--bg);border:1px solid var(--line);border-radius:14px;color:inherit;text-decoration:none;transition:border-color .15s}
 .drop-list a:hover{border-color:var(--red)}
 .drop-list .co-name{font-weight:500;font-size:.95rem}
 .drop-list .co-url{font-size:.8rem;color:var(--muted);overflow-wrap:anywhere}
@@ -96,6 +98,10 @@ details[open] summary .chev{transform:rotate(-135deg)}
       <span class="logo"><svg><use href="#org"/></svg></span>
       <span class="txt"><span class="name">Gerentes y sus marcas asociadas</span><span class="host">Gerentes y sucursales</span></span>
     </a>
+    <button type="button" class="card" onclick="document.getElementById('enterstep-modal').showModal()">
+      <span class="logo g"><svg><use href="#building"/></svg></span>
+      <span class="txt"><span class="name">Enterstep</span><span class="host">Ver empresas</span></span>
+    </button>
   </div>
 
   <h2>Para marcas de Stellantis</h2>
@@ -121,33 +127,30 @@ details[open] summary .chev{transform:rotate(-135deg)}
       <span class="txt"><span class="name">Amicar</span><span class="host">amices.amicar.com</span></span>
     </a>
   </div>
-
-  <h2>Enterstep</h2>
-  <details class="drop">
-    <summary class="card">
-      <span class="logo g"><svg><use href="#building"/></svg></span>
-      <span class="txt"><span class="name">Enterstep</span><span class="host">Ver empresas</span></span>
-      <span class="chev" aria-hidden="true"></span>
-    </summary>
-    <div class="drop-list">
-      <a href="https://callegari.app.enterstep.com/" target="_blank" rel="noopener">
-        <span class="co-name">Callegari e Hijos Ltda.</span>
-        <span class="co-url">callegari.app.enterstep.com</span>
-      </a>
-      <a href="https://hcallegari.app.enterstep.com/" target="_blank" rel="noopener">
-        <span class="co-name">Sociedad Hermanas Ltda.</span>
-        <span class="co-url">hcallegari.app.enterstep.com</span>
-      </a>
-      <a href="https://trento.app.enterstep.com/" target="_blank" rel="noopener">
-        <span class="co-name">Importadora Trento Ltda.</span>
-        <span class="co-url">trento.app.enterstep.com</span>
-      </a>
-      <a href="https://balmaceda.app.enterstep.com/" target="_blank" rel="noopener">
-        <span class="co-name">Automotriz Balmaceda Ltda.</span>
-        <span class="co-url">balmaceda.app.enterstep.com</span>
-      </a>
-    </div>
-  </details>
 </main>
+<dialog id="enterstep-modal" class="modal">
+  <div class="modal-head">
+    <span class="modal-title">Enterstep</span>
+    <button type="button" class="modal-close" onclick="document.getElementById('enterstep-modal').close()" aria-label="Cerrar">&times;</button>
+  </div>
+  <div class="drop-list">
+    <a href="https://callegari.app.enterstep.com/" target="_blank" rel="noopener">
+      <span class="co-name">Callegari e Hijos Ltda.</span>
+      <span class="co-url">callegari.app.enterstep.com</span>
+    </a>
+    <a href="https://hcallegari.app.enterstep.com/" target="_blank" rel="noopener">
+      <span class="co-name">Sociedad Hermanas Ltda.</span>
+      <span class="co-url">hcallegari.app.enterstep.com</span>
+    </a>
+    <a href="https://trento.app.enterstep.com/" target="_blank" rel="noopener">
+      <span class="co-name">Importadora Trento Ltda.</span>
+      <span class="co-url">trento.app.enterstep.com</span>
+    </a>
+    <a href="https://balmaceda.app.enterstep.com/" target="_blank" rel="noopener">
+      <span class="co-name">Automotriz Balmaceda Ltda.</span>
+      <span class="co-url">balmaceda.app.enterstep.com</span>
+    </a>
+  </div>
+</dialog>
 </body>
 </html>
